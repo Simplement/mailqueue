@@ -1,0 +1,29 @@
+{
+	"name": "simplement/mailqueue",
+	"description": "Simple queue for outcoming mails for Nette Framework.",
+	"keywords": ["mail", "queue", "nette"],
+	"homepage": "https://github.com/simplement",
+	"license": ["BSD-3-Clause", "GPL-2.0", "GPL-3.0"],
+	"authors": [
+		{
+			"name": "Martin Dendis",
+			"email": "martin.dendis@email.cz"
+		}
+	],
+	"require": {
+		"nette/di": "~2.3",
+		"nette/mail": "~2.4",
+		"tracy/tracy": "~2.4",
+		"kdyby/console": "~2.4"
+	},
+	"require-dev": {
+		"nette/tester": "~1.5"
+	},
+	"suggest": {
+		"doctrine/orm": "With doctrine you can use default mail queue & don't have to implement your own."
+	},
+	"autoload": {
+		"classmap": ["src"]
+	},
+	"minimum-stability": "dev"
+}

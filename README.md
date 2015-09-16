@@ -33,8 +33,15 @@ mailqueue:
 	rescheduleTime: +30 minutes		# If unnable to send mail, try nex attempt after ...
 	defaultSender: 'MyAwesomeApp <myawesomeapp@mail.com>'	# Optional
 
-services:							# Determine which mail queue will be used
+
+
+# If you want to use default Doctrine Mail Queue
+services:
 	mailQueue: Simplement\Bridges\DoctrineORM\MailQueue
+	
+doctrine:
+	metadata:
+		Simplement: %appDir%/../vendor/simplement/mailqueue/src/Bridges/DoctrineOrm/Entity
 ```
 ______
 

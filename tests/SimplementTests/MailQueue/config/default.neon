@@ -1,0 +1,11 @@
+extensions:
+	mailqueue: Simplement\Bridges\MailDI\MailQueueExtension
+
+mailqueue:
+	timeLimit: 30					# Max executin time of cron script
+	mailLimit: 50					# Max number of mails sent peer one cron call
+	attemptLimit: 5					# Max number of attempts to send mail
+	rescheduleTime: +30 minutes		# If unnable to send mail, try nex attempt after ...
+
+services:
+	mailQueue: Simplement\Bridges\DoctrineORM\MailQueue

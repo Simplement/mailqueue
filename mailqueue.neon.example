@@ -10,9 +10,9 @@ kdyby.doctrine:				# Add metadata directory for default doctrine MailQueue entit
 
 
 extensions:
-	simplement.queuedmailer: Simplement\Bridges\MailDI\MailExtension
+	simplement.mailqueue: Simplement\Bridges\MailDI\MailQueueExtension
 
-simplement.queuedmailer:
+simplement.mailqueue:
 	timeLimit: 30					# Max executin time of cron script
 	mailLimit: 50					# Max number of mails sent peer one cron call
 	attemptLimit: 5					# Max number of attempts to send mail

@@ -18,9 +18,16 @@ class Mailer implements IMailer {
 	/** @var IQueue */
 	private $queue;
 
+	/** @var array */
+	private $config;
+
 	public function __construct(IMailer $mailer, IQueue $queue) {
 		$this->mailer = $mailer;
 		$this->queue = $queue;
+	}
+
+	public function setConfig(array $config) {
+		$this->config = $config;
 	}
 
 	/**
@@ -30,6 +37,11 @@ class Mailer implements IMailer {
 	 * @param type $useQueue
 	 */
 	public function send(Message $mail, $priority = 1, $useQueue = TRUE) {
+		if (!$mail->getFrom() && $this->config['defaultSender']) {
+			$mail = clone $mail;
+			$mail->setFrom($this->config['defaultSender']);
+		}
+
 		if (!$useQueue) {
 			$this->mailer->send($mail);
 		} else {

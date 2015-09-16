@@ -12,15 +12,20 @@
 	],
 	"require": {
 		"nette/di": "~2.3",
-		"nette/mail": "~2.4",
-		"tracy/tracy": "~2.4",
-		"kdyby/console": "~2.4"
+		"nette/mail": "~2.3",
+		"tracy/tracy": "~2.3",
+		"kdyby/console": "~2.3"
 	},
 	"require-dev": {
-		"nette/tester": "~1.5"
+		"nette/neon": "~2.3",
+		"nette/tester": "~1.5",
+		"nette/bootstrap": "~2.3",
+		"nette/application": "~2.3",
+		"nette/robot-loader": "~2.3",
+		"kdyby/doctrine": "~3.0"
 	},
 	"suggest": {
-		"doctrine/orm": "With doctrine you can use default mail queue & don't have to implement your own."
+		"kdyby/doctrine": "With doctrine you can use default mail queue & don't have to implement your own."
 	},
 	"autoload": {
 		"classmap": ["src"]

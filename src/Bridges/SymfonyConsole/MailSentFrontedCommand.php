@@ -25,7 +25,7 @@ class MailSendFrontedCommand extends Command {
 	private $config;
 
 	public function setConfig(array $config) {
-		$this->config || $this->config = $config;
+		$this->config = $config;
 	}
 
 	protected function configure() {

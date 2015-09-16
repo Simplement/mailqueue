@@ -1,0 +1,12 @@
+extensions:
+	annotations: Kdyby\Annotations\DI\AnnotationsExtension
+	events: Kdyby\Events\DI\EventsExtension
+	doctrine: Kdyby\Doctrine\DI\OrmExtension
+	console: Kdyby\Console\DI\ConsoleExtension
+
+doctrine:
+	user: root
+	password: 
+	dbname: simplement
+	metadata:
+		Simplement: %appDir%/../../../src/Bridges/DoctrineOrm

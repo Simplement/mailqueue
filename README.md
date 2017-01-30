@@ -41,7 +41,7 @@ services:
 	
 doctrine:
 	metadata:
-		Simplement: %appDir%/../vendor/simplement/mailqueue/src/Bridges/DoctrineOrm/Entity
+		Simplement: %appDir%/../vendor/simplement/mailqueue/src/Bridges/DoctrineORM/Entity
 ```
 ______
 

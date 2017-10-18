@@ -23,15 +23,10 @@ class MailQueue implements IEntry {
 	private $id;
 
 	/**
-	 *
+	 * @ORM\Column(name="message", type="object")
 	 * @var Message
 	 */
 	private $message;
-
-	/**
-	 * @ORM\Column(name="binary", type="blob")
-	 */
-	private $binary;
 
 	/**
 	 * @ORM\Column(name="priority", type="integer", options={"default"=1, "unsigned"=true})
@@ -49,7 +44,7 @@ class MailQueue implements IEntry {
 	private $sheduledAt;
 
 	public function __construct(Message $message, $priority = 1) {
-		$this->binary = serialize($this->message = $message);
+		$this->message = $message;
 		$this->priority = $priority;
 		$this->attempt = 0;
 	}
@@ -59,16 +54,7 @@ class MailQueue implements IEntry {
 	 * @return Message
 	 */
 	public function getMessage() {
-		if ($this->message) {
-			return $this->message;
-		}
-		if (is_resource($this->binary)) {
-			rewind($this->binary);
-			$data = stream_get_contents($this->binary);
-		} else {
-			$data = $this->binary;
-		}
-		return $this->message = unserialize($data);
+		return $this->message;
 	}
 
 	/**
